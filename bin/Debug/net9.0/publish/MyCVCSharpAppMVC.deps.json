@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v9.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v9.0": {
+      "MyCVCSharpAppMVC/1.0.0": {
+        "runtime": {
+          "MyCVCSharpAppMVC.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "MyCVCSharpAppMVC/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

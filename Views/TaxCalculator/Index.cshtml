@@ -1,0 +1,52 @@
+@{
+    ViewData["Title"] = "UK Tax Calculator";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>   
+</head>
+<body>
+
+<div class="container tax-page-container">
+    <h2>UK Tax Calculator</h2>
+    
+    <form asp-action="CalculateTax" method="post">
+        <div class="mb-3">
+            <label class="form-label">Enter Your Income (£):</label>
+            <input type="number" name="income" class="form-control" required />
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Employment Type:</label>
+            <select name="isSelfEmployed" class="form-select">
+                <option value="false">Employed</option>
+                <option value="true">Self-Employed</option>
+            </select>
+        </div>
+
+        <div class="form-check mb-3">
+            <input class="form-check-input" type="checkbox" name="hasStudentLoan" value="true">
+            <label class="form-check-label">Do you have a Student Loan?</label>
+        </div>
+
+        <button type="submit" class="btn btn-primary text-center">Calculate Tax</button>
+    </form>
+
+    @if (ViewBag.TaxOwed != null)
+    {
+        <div class="results mt-4">
+            <h4>Results:</h4>
+            <p>💰 <strong>Total Tax Owed:</strong> £@ViewBag.TaxOwed</p>
+            <p>🧾 <strong>National Insurance:</strong> £@ViewBag.NIContribution</p>
+            <p>🎓 <strong>Student Loan Repayment:</strong> £@ViewBag.StudentLoan</p>
+            <p>💵 <strong>Net Income After Deductions:</strong> £@ViewBag.NetIncome</p>
+        </div>
+    }
+</div>
+
+</body>
+</html>

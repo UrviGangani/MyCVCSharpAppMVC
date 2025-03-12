@@ -1,0 +1,128 @@
+html {
+  font-size: 14px;
+}
+
+/* @media (min-width: 768px) {
+  html {
+    font-size: 14px;
+  }
+} */
+
+.btn:focus,
+.btn:active:focus,
+.btn-link.nav-link:focus,
+.form-control:focus,
+.form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+.form-floating > .form-control-plaintext::placeholder,
+.form-floating > .form-control::placeholder {
+  color: var(--bs-secondary-color);
+  text-align: end;
+}
+
+.form-floating > .form-control-plaintext:focus::placeholder,
+.form-floating > .form-control:focus::placeholder {
+  text-align: start;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+  margin-bottom: 60px;
+  background-color: #f4f4f4;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #333;
+  color: white;
+  display: flex;
+  justify-content: center;
+  padding: 10px 0;
+  z-index: 1000;
+}
+
+.subNavbar {
+  top: 65px !important;
+}
+.navbar a {
+  color: white;
+  text-decoration: none;
+  padding: 10px 20px;
+  margin: 0 10px;
+  transition: background 0.3s;
+}
+
+.navbar a.active {
+  background: #555;
+  border-radius: 5px;
+}
+
+.container {
+  width: 80%;
+  margin: auto;
+}
+.body-content {
+  margin-top: 155px;
+  min-height: 720px;
+}
+
+section {
+  padding: 10px 0;
+}
+
+footer {
+  width: 100%;
+  padding: 15px 0;
+  background-color: #fff;
+}
+
+.main-heading {
+  font-size: 20px;
+  font-weight: bold;
+}
+.sub-heading {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+/* Tax controller page css */
+.tax-page-container {
+  max-width: 600px !important;
+  margin-top: 50px;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin-left: 0 !important;
+}
+
+.btn-primary {
+  width: 50%;
+  font-size: 18px;
+  margin: 0px auto;
+  align-content: center;
+}
+
+.results {
+  background: #e9ecef;
+  padding: 15px;
+  border-radius: 8px;
+  margin-top: 20px;
+}
+
+.results p {
+  font-size: 16px;
+}

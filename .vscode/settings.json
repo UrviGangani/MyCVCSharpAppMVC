@@ -1,0 +1,5 @@
+{
+  "editor.formatOnSave": true,
+  "appService.defaultWebAppToDeploy": "/subscriptions/1d3ee9b7-fc6b-46fd-87d8-d1a8402e5539/resourceGroups/CVTaxControllerMVCWebAPP_group/providers/Microsoft.Web/sites/CVTaxControllerMVCWebAPP",
+  "appService.deploySubpath": "publish"
+}

@@ -1,0 +1,7 @@
+D:\Urvi\Bincom Learning\MyCVCSharpAppMVC\publish\MyCVCSharpAppMVC.exe
+D:\Urvi\Bincom Learning\MyCVCSharpAppMVC\publish\appsettings.Development.json
+D:\Urvi\Bincom Learning\MyCVCSharpAppMVC\publish\appsettings.json
+D:\Urvi\Bincom Learning\MyCVCSharpAppMVC\publish\MyCVCSharpAppMVC.dll
+D:\Urvi\Bincom Learning\MyCVCSharpAppMVC\publish\MyCVCSharpAppMVC.deps.json
+D:\Urvi\Bincom Learning\MyCVCSharpAppMVC\publish\MyCVCSharpAppMVC.runtimeconfig.json
+D:\Urvi\Bincom Learning\MyCVCSharpAppMVC\publish\MyCVCSharpAppMVC.pdb
