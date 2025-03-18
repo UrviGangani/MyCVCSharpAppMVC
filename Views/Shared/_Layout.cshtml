@@ -27,13 +27,47 @@
                             <li class="nav-item">
                                 <a class="nav-link" asp-area="" asp-controller="Home" asp-action="CV">CV</a>
                             </li>
-                            <li class="nav-item">
+                            <li class="nav-item">                                
                                 <a class="nav-link" asp-area="" asp-controller="TaxCalculator" asp-action="Index">Tax Controller</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
                             </li>
-                            
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="accountDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Account
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="accountDropdown">
+                                    @if (Context.Session.GetString("UserEmail") == null)
+                                    {
+                                        <!-- Show Signup & Login when user is NOT logged in -->
+                                        <li>
+                                            <a class="dropdown-item" asp-controller="User" asp-action="Signup">Signup</a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" asp-controller="User" asp-action="Login">Login</a>
+                                        </li>
+                                    }
+                                    else
+                                    {
+                                        <!-- Show Profile & Logout when user IS logged in -->
+                                        <li>
+                                            <a class="dropdown-item" asp-controller="User" asp-action="Profile">Profile</a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" asp-controller="User" asp-action="Logout">Logout</a>
+                                        </li>
+                                    }
+                                </ul>
+                            </li>
+                                 @* <li class="nav-item dropdown">
+                                     <a href="#" class="nav-link dropdown-toggle">Account</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" asp-controller="User" asp-action="Signup">Signup</a></li>
+                                        <li><a class="dropdown-item" asp-controller="User" asp-action="Login">Login</a></li>
+                                    </ul>
+                                </li> *@
+                                
                         </ul>
                     </div>
                </div>
@@ -55,5 +89,38 @@
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    // Function to refresh the navbar dynamically after login
+    function refreshNavbar() {
+        $.get('/User/GetNavbar', function (data) {
+            $('#navbarContainer').html(data); // Replace the navbar content with updated data
+        });
+    }
+
+    // On login form submission, send AJAX request to login action
+    $(document).on('submit', '#loginForm', function (e) {
+        e.preventDefault();
+        var formData = $(this).serialize(); // Serialize form data for submission
+
+        $.post('/User/Login', formData, function (response) {
+            if (response.success) {
+                refreshNavbar(); // Refresh navbar after successful login
+
+                // Redirect to the profile page using the redirect URL from the response
+                window.location.href = response.redirectUrl;
+            }
+            else {
+                // Display error message if login fails
+                alert(response.message);
+            }
+        });
+    });
+</script>
+
+
+
 </body>
+
+
 </html>

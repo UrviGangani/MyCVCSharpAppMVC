@@ -1,0 +1,46 @@
+@model MyCVCSharpAppMVC.Models.User
+
+@{
+    ViewBag.Title = "Signup";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body class="body-content">
+    <div class="container">
+        <h2>Signup</h2>
+
+        @if (!string.IsNullOrEmpty(@ViewBag.ErrorMessage))
+        {
+            <p style="color: red">@ViewBag.ErrorMessage</p>
+        }
+
+        <form method="post" enctype="multipart/form-data">
+            <label>Name:</label>
+            <input asp-for="Name" required />
+
+            <label>Email:</label>
+            <input type="email" asp-for="Email" required />
+
+            <label>Password:</label>
+            <input type="password" asp-for="Password" required />
+
+            <label>Profile Picture:</label>
+            <input type="file" asp-for="ProfilePicture" />
+
+            <button type="submit">Sign Up</button>
+        </form>
+
+        @if (TempData["SuccessMessage"] != null)
+        {
+            <p style="color: green">@TempData["SuccessMessage"]</p>
+        }
+    </div>
+</body>
+</html>

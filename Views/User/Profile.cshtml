@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link rel="stylesheet" href="~/css/site.css">
+</head>
+<body class="body-content">
+    <div class="container">
+        <h2 class="main-heading">Welcome, @ViewBag.Name</h2>
+        <p>Email: @ViewBag.Email</p>
+
+        @if (ViewBag.ProfilePicture != null)
+        {
+            <img src="@ViewBag.ProfilePicture" width="100" height="100" />
+        }
+        <a href="@Url.Action("Logout", "User")" class="btn btn-danger">Logout</a>
+    </div>
+</body>
+</html>

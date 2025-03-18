@@ -1,0 +1,27 @@
+<ul class="navbar-nav ml-auto">
+    <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="accountDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Account
+        </a>
+        <ul class="dropdown-menu" aria-labelledby="accountDropdown">
+            @if (Context.Session.GetString("UserEmail") == null)
+            {
+                <li>
+                    <a class="dropdown-item" asp-controller="User" asp-action="Signup">Signup</a>
+                </li>
+                <li>
+                    <a class="dropdown-item" asp-controller="User" asp-action="Login">Login</a>
+                </li>
+            }
+            else
+            {
+                <li>
+                    <a class="dropdown-item" asp-controller="User" asp-action="Profile">Profile</a>
+                </li>
+                <li>
+                    <a class="dropdown-item" asp-controller="User" asp-action="Logout">Logout</a>
+                </li>
+            }
+        </ul>
+    </li>
+</ul>
